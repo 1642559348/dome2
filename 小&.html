@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小&解析</title>
+    <script>
+
+            window.onload=function(){
+            let obut= document.querySelector("#obut");
+            let ourl= document.querySelector("#ourl");
+            let url = "https://api.isoyu.com/ckplayer/?url=";
+            let data=null;
+            obut.addEventListener("click",function(){
+              if(ourl.value!=""){
+                data=url+ourl.value;
+                window.open(data);
+              }
+
+            })
+        }
+  
+    </script>
+    <style>
+        .box{
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            outline-style: none;
+
+        }
+        #ourl{
+            width: 50%;
+            height: 30px;
+            border-radius: 10px;
+            outline-style: none;
+            outline-style: none;
+            border: white 1px solid;
+        }
+        #obut{
+
+        }
+        @media screen  and (max-width: 768px){
+            body{
+                background-color: aquamarine;
+                box-sizing: border-box;
+
+            }
+            .box{
+              width: 100%;
+              position: relative;
+              left: 50%;
+              transform: translate(-50%, 0%);
+            }
+            #ourl{
+            width: 80%;
+            }
+            #obut{
+                width: 15%;
+                height: 30px;
+                border-radius: 10px;
+                outline-style: none;
+                border: white 1px solid;
+                background-color:black ;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- https://api.isoyu.com/ckplayer/?url= 源解析接口 -->
+   <div class="box">
+    <input id="ourl" type="text" value="" placeholder="请输入要观看的影视链接">
+    <input id="obut" type="button" value="搜索">
+   </div>
+
+</body>
+</html>
